@@ -14,9 +14,20 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "gatsby": "^2.24.50",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "@emotion/styled": "^10.0.27",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "animate.css": "^4.1.0",
+    "gatsby": "^2.24.53",
+    "gatsby-source-notion-database": "^0.6.9",
+    "html-react-parser": "^0.13.0",
+    "react": "^16.13.1",
+    "react-device-detect": "^1.13.1",
+    "react-dom": "^16.13.1",
+    "react-hover-video-player": "^6.6.3",
+    "react-icons": "^3.11.0",
+    "react-modal": "^3.11.2",
+    "react-reveal": "^1.2.2"
   },
   "devDependencies": {
     "prettier": "2.1.0"
