@@ -4,10 +4,11 @@
     "\\src",
     "\\src\\assets",
     "\\src\\assets\\fonts",
-    "\\src\\assets\\images",
+    "\\src\\assets\\videos",
+    "\\src\\components",
     "\\src\\pages",
     "\\src\\styles"
   ],
-  "SelectedNode": "\\src\\assets\\fonts",
+  "SelectedNode": "\\LICENSE",
   "PreviewInSolutionExplorer": false
 }

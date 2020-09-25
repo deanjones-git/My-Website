@@ -13,6 +13,12 @@ const Layout = styled.div`
 
 const Intro = styled.div`
 	margin: 0 auto;
+	padding: 0 20px;
+	max-width: 1200px;
+
+	${true_mobile} {
+		padding: 0 10px;
+	}
 `
 
 const Header = styled.header`
@@ -43,6 +49,7 @@ const Body = styled.div`
 	padding: 0 20px;
 	${true_mobile} {
 		font-size: 10px;
+		padding: 0 10px;
 	}
 `
 
@@ -61,7 +68,7 @@ const H2 = styled.h2`
 	font-size: 20px;
 	line-height: 140%;
 	${true_mobile} {
-		font-size: 16px;
+		font-size: 12px;
 	}
 `
 
@@ -91,48 +98,46 @@ export default function Home({ data }) {
 	<Layout>
 		<Intro>
 			<Header>
-				<FadeWordDiv when={view}>
-					<FadeWord>
-						{"developer".split("").map((c, index) => {
-							const cDelay = index*100
-							return index % 2 ? <Fade up delay={cDelay}>{c}</Fade> : <Fade down delay={cDelay}>{c}</Fade>
-						})}
-					</FadeWord>
-					<FadeWord>
-						{"scientist".split("").map((c, index) => {
-							const cDelay = 1000 + index*100
-							return index % 2 ? <Fade up delay={cDelay}>{c}</Fade> : <Fade down delay={cDelay}>{c}</Fade>
-						})}
-					</FadeWord>
-					<FadeWord>
-						{"creator".split("").map((c, index) => {
-							const cDelay = 2000 + index*100
-							return index % 2 ? <Fade up delay={cDelay}>{c}</Fade> : <Fade down delay={cDelay}>{c}</Fade>
-						})}
-					</FadeWord>
-				</FadeWordDiv>
-				<Fade right delay={4500}>
-					<H2>dean jones</H2>
-				</Fade>
+					<FadeWordDiv when={view}>
+						<FadeWord>
+							{"developer".split("").map((c, index) => {
+								const cDelay = index*100
+								return index % 2 ? <Fade up delay={cDelay}>{c}</Fade> : <Fade down delay={cDelay}>{c}</Fade>
+							})}
+						</FadeWord>
+						<FadeWord>
+							{"scientist".split("").map((c, index) => {
+								const cDelay = 1000 + index*100
+								return index % 2 ? <Fade up delay={cDelay}>{c}</Fade> : <Fade down delay={cDelay}>{c}</Fade>
+							})}
+						</FadeWord>
+						<FadeWord>
+							{"creator".split("").map((c, index) => {
+								const cDelay = 2000 + index*100
+								return index % 2 ? <Fade up delay={cDelay}>{c}</Fade> : <Fade down delay={cDelay}>{c}</Fade>
+							})}
+						</FadeWord>
+					</FadeWordDiv>
+					<Fade right delay={4500}>
+						<H2>dean jones</H2>
+					</Fade>
 			</Header>
 		</Intro>
-		<Fade up delay={4500}>
-			<Body>
-				<H1>Welcome! I'm Dean Jones &mdash; a San Jose, CA native and 2nd-year UCLA Computer Science & Engineering major. I like building things to help people.</H1>
-				<Spacer y={8}/>
-				<H2>Connect with me on <A target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/dean-c-jones/">LinkedIn</A>, check out my <A target="_blank" rel="noopener noreferrer" href="https://github.com/deanjones-git">Github</A>, or shoot me an <A target="_blank" rel="noopener noreferrer" href="mailto:deanjones2001@gmail.com">email</A>.</H2>
-				<Spacer y={24}/>
-				<H1>Here's some of my work. Click for more details!</H1>
-				<Work>
-					{
-						data.allProjects.nodes.map(node => (
-							<WorkItem data={node} />
-						))
-					}
-				</Work>
-				<Spacer y={24}/>
-			</Body>
-		</Fade>
+		<Body>
+			<H1>Welcome! I'm Dean Jones &mdash; a San Jose, CA native and 2nd-year UCLA Computer Science & Engineering major.</H1>
+			<Spacer y={8}/>
+			<H2>Connect with me on <A target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/dean-c-jones/">LinkedIn</A>, check out my <A target="_blank" rel="noopener noreferrer" href="https://github.com/deanjones-git">Github</A>, or shoot me an <A target="_blank" rel="noopener noreferrer" href="mailto:deanjones2001@gmail.com">email</A>.</H2>
+			<Spacer y={24}/>
+			<H1>Here's some of my work. Click for more details!</H1>
+			<Work>
+				{
+					data.allProjects.nodes.map(node => (
+						<WorkItem data={node} />
+					))
+				}
+			</Work>
+			<Spacer y={24}/>
+		</Body>
 	</Layout>
   )
 }

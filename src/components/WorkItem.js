@@ -6,7 +6,7 @@ import { AiOutlineClose } from "react-icons/ai"
 import HoverVideoPlayer from "react-hover-video-player"
 import ti_rslk from "../assets/videos/ti_rslk.mp4"
 import parse from "html-react-parser"
-import { isMobile } from "react-device-detect"
+import { BrowserView } from "react-device-detect"
 
 const mobile = `@media (max-width: 800px)`
 const true_mobile = `@media (max-width: 400px)`
@@ -77,14 +77,15 @@ const H4 = styled.h4`
 const ModalImg = styled.img`
 	display: block;
 	margin: 0 auto;
-	max-width: 80%;
-	max-height: 400px;
+	max-width: 60%;
+	max-height: 300px;
 `
 
 const P = styled.p`
 	font-family: Rubik;
 	line-height: 140%;
 	font-size: 16px;
+
 	& > a {
 		color: white;
 		text-decoration: none;
@@ -176,22 +177,23 @@ export default function WorkItem({ data }) {
 				<IconDiv>
 					<AiOutlineClose size={24} onClick={e => toggleModal(e)}/>
 				</IconDiv>
-				{!Name.match("Self-Driving TI-RSLK") && !isMobile &&
-					<ModalImg src={imageURL}/>
-				}
-				{Name.match("Self-Driving TI-RSLK") && !isMobile &&
-					<>
-					<HoverBubble>
-						<HoverP>Hover to see it in action!</HoverP>
-					</HoverBubble>
-					<HoverVideoPlayer
-						videoSrc={ti_rslk}
-						restartOnPaused={true}
-						loop={false}
-						style={{display: "block", margin: "0 auto", width: "100%", maxWidth: "350px"}}
-					/>
-					</>
-				}
+				<BrowserView>
+					{ 
+					Name.match("Self-Driving TI-RSLK") ? 
+						<>
+						<HoverBubble>
+							<HoverP>Hover to see it in action!</HoverP>
+						</HoverBubble>
+						<HoverVideoPlayer
+							videoSrc={ti_rslk}
+							restartOnPaused={true}
+							loop={false}
+							style={{display: "block", margin: "0 auto", maxWidth: "60%", maxHeight: "300px"}}
+						/>
+						</> :
+						<ModalImg src={imageURL}/>
+					}
+				</BrowserView>
 				<H4>{Name}</H4>
 				<P>{parse(Summary)}</P>
 
