@@ -96,6 +96,12 @@ const P = styled.p`
 	}
 `
 
+const HoverContainer = styled.div`
+	width: 50%;
+	max-width: 300px;
+	margin: 0 auto;
+`
+
 const HoverBubble = styled.div`
 	position: relative;
 	background: #1F1F1F;
@@ -139,7 +145,6 @@ const HoverP = styled.p`
 const IconDiv = styled.div`
 	display: flex;
 	flex-direction: row-reverse;
-	margin-bottom: 20px;
 `
 
 const customStyles = {
@@ -180,17 +185,16 @@ export default function WorkItem({ data }) {
 				<BrowserView>
 					{ 
 					Name.match("Self-Driving TI-RSLK") ? 
-						<>
-						<HoverBubble>
-							<HoverP>Hover to see it in action!</HoverP>
-						</HoverBubble>
-						<HoverVideoPlayer
-							videoSrc={ti_rslk}
-							restartOnPaused={true}
-							loop={false}
-							style={{display: "block", margin: "0 auto", maxWidth: "60%", maxHeight: "300px"}}
-						/>
-						</> :
+						<HoverContainer>
+							<HoverBubble>
+								<HoverP>Hover to see it in action!</HoverP>
+							</HoverBubble>
+							<HoverVideoPlayer
+								videoSrc={ti_rslk}
+								restartOnPaused={true}
+								loop={false}
+							/>
+						</HoverContainer> :
 						<ModalImg src={imageURL}/>
 					}
 				</BrowserView>
