@@ -124,7 +124,7 @@ export default function Home({ data }) {
 			</Header>
 		</Intro>
 		<Body>
-			<H1>Welcome! I'm Dean Jones &mdash; a San Jose, CA native and 2nd-year UCLA Computer Science & Engineering major.</H1>
+			<H1>Welcome! I'm Dean Jones &mdash; a San Jose, CA native and 4th-year UCLA Computer Science & Engineering major.</H1>
 			<Spacer y={8}/>
 			<H2>Connect with me on <A target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/dean-c-jones/">LinkedIn</A>, check out my <A target="_blank" rel="noopener noreferrer" href="https://github.com/deanjones-git">Github</A>, or shoot me an <A target="_blank" rel="noopener noreferrer" href="mailto:deanjones2001@gmail.com">email</A>.</H2>
 			<Spacer y={24}/>
